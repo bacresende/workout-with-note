@@ -11,6 +11,11 @@ abstract class Routes {
   static const TRAIN = '/train';
   static const TRAIN_DETAILS = '/train-details';
   static const PROFILE = '/profile';
+  static const NOTE = '/note';
+  static const NOTE_DETAILS = '/note-details';
+  static const ADD_NEW_NOTE = '/add-new-note';
+  static const EDIT_NOTE = '/edit-note';
+
 
   static const EDIT_PROFILE = '/edit-my-profile';
   static const USER_AGREEMENT = '/user-agreement';

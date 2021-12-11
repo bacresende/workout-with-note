@@ -13,7 +13,7 @@ class NavigationService {
             color: Colors.black54,
           ),
           activeIcon: Icon(LineIcons.home),
-          title: "Workout"),
+          title: "Notes"),
       BottomBarItem(isCustomWidget: true),
       BottomBarItem(
           backgroundColor: kFirstColor,

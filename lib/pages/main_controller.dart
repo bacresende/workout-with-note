@@ -13,6 +13,7 @@ class MainController extends GetxController {
   @override
   void onInit() {
     navigationItems = NavigationService().getNavigationItemList();
+    
     super.onInit();
   }
 

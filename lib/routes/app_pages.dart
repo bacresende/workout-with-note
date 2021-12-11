@@ -1,3 +1,7 @@
+import 'package:aqua_workout_pro/pages/add-new-note/add_new_note_view.dart';
+import 'package:aqua_workout_pro/pages/edit-note/edit_note_view.dart';
+import 'package:aqua_workout_pro/pages/note-detail/note_detail_view.dart';
+import 'package:aqua_workout_pro/pages/note/note_view.dart';
 import 'package:get/get.dart';
 import '../core.dart';
 
@@ -62,6 +66,26 @@ class AppPages {
       name: Routes.USER_AGREEMENT,
       title: 'User Agreement',
       page: () => const UserAgreementView(),
+    ),
+    GetPage(
+      name: Routes.NOTE,
+      title: 'Note View',
+      page: () => NoteView(),
+    ),
+    GetPage(
+      name: Routes.NOTE_DETAILS,
+      title: 'Note Details',
+      page: () => NoteDetailView(),
+    ),
+    GetPage(
+      name: Routes.ADD_NEW_NOTE,
+      title: 'Add New Note',
+      page: () => AddNewNoteView(),
+    ),
+    GetPage(
+      name: Routes.EDIT_NOTE,
+      title: 'Edit Note',
+      page: () => EditNoteView(),
     ),
   ];
 }
