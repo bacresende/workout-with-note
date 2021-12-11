@@ -1,6 +1,4 @@
 import 'package:aqua_workout_pro/controller/note_controller.dart';
-import 'package:aqua_workout_pro/pages/main_view.dart';
-import 'package:aqua_workout_pro/pages/note/note_view.dart';
 import 'package:aqua_workout_pro/routes/app_pages.dart';
 import 'package:aqua_workout_pro/shared/widgets/alert_dialog.dart';
 import 'package:flutter/material.dart';
