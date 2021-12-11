@@ -39,7 +39,6 @@ class MyApp extends StatelessWidget {
       getPages: AppPages.routes,
       initialBinding: BindingsBuilder(() {
         Get.put<MainController>(MainController());
-        Get.put<TrainController>(TrainController());
         Get.put<ProfileController>(ProfileController());
       }),
     );

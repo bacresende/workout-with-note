@@ -10,12 +10,7 @@ class WelcomeView extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/black/9.jpg"),
-                fit: BoxFit.cover,
-              ),
-            ),
+            color: kThirdColor,
           ),
           Container(
             width: MediaQuery.of(context).size.width,
@@ -55,7 +50,7 @@ class WelcomeView extends StatelessWidget {
                         ),
                         SizedBox(height: 17),
                         Text(
-                          "Train and live the new experience of \nexercising at home",
+                          "Live the new experience \nat home",
                           style: TextStyle(color: Colors.white),
                         )
                       ],

@@ -1,7 +1,7 @@
-import 'package:aqua_workout_pro/pages/add-new-note/add_new_note_view.dart';
-import 'package:aqua_workout_pro/pages/edit-note/edit_note_view.dart';
-import 'package:aqua_workout_pro/pages/note-detail/note_detail_view.dart';
-import 'package:aqua_workout_pro/pages/note/note_view.dart';
+import 'package:aqua_workout_pro/pages/notes/screens/add_new_note_view.dart';
+import 'package:aqua_workout_pro/pages/notes/screens/edit_note_view.dart';
+import 'package:aqua_workout_pro/pages/notes/screens/note_detail_view.dart';
+import 'package:aqua_workout_pro/pages/notes/screens/note_view.dart';
 import 'package:get/get.dart';
 import '../core.dart';
 
@@ -34,14 +34,6 @@ class AppPages {
     GetPage(
       name: Routes.HOME,
       page: () => MainView(),
-    ),
-    GetPage(
-      name: Routes.TRAIN,
-      page: () => TrainView(),
-    ),
-    GetPage(
-      name: Routes.TRAIN_DETAILS,
-      page: () => TrainDetailsView(),
     ),
     GetPage(
       name: Routes.PROFILE,

@@ -1,5 +1,5 @@
-import 'package:aqua_workout_pro/controller/note_controller.dart';
-import 'package:aqua_workout_pro/pages/note-detail/note_detail_view.dart';
+import 'package:aqua_workout_pro/pages/notes/note_controller.dart';
+import 'package:aqua_workout_pro/pages/notes/screens/note_detail_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';

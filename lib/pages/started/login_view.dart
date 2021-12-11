@@ -15,12 +15,7 @@ class LoginView extends StatelessWidget {
               children: [
                 Container(
                   height: MediaQuery.of(context).size.height * 0.55,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/images/black/12.jpg"),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                  color: kThirdColor,
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -72,8 +67,7 @@ class LoginView extends StatelessWidget {
                               ),
                               SizedBox(height: 10),
                               Text(
-                                "Train and live the new experience of \nexercising"
-                                " at home",
+                                "Live the new experience \nat home",
                                 style: TextStyle(color: Colors.white),
                               ),
                             ],

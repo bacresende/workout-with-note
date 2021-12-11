@@ -8,8 +8,6 @@ abstract class Routes {
   static const LOGIN = '/login';
   static const REGISTER = '/register';
   static const FORGET_PASSWORD = '/forget-password';
-  static const TRAIN = '/train';
-  static const TRAIN_DETAILS = '/train-details';
   static const PROFILE = '/profile';
   static const NOTE = '/note';
   static const NOTE_DETAILS = '/note-details';

@@ -10,12 +10,7 @@ class AboutView extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/black/16.jpg"),
-                fit: BoxFit.cover,
-              ),
-            ),
+            color: kThirdColor,
           ),
           Container(
             width: MediaQuery.of(context).size.width,
