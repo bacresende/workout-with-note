@@ -10,6 +10,8 @@ class Note {
     this.dateTimeCreated
 });
 
+Note.fromMAp(){}
+
   Map<String, dynamic> toMap() {
     return {
       "id": this.id,

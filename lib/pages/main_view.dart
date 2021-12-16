@@ -1,3 +1,4 @@
+import 'package:aqua_workout_pro/pages/news/screens/news_screen.dart';
 import 'package:aqua_workout_pro/pages/notes/screens/note_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,7 +14,7 @@ class MainView extends GetView<MainController> {
       body: PageView(
         controller: controller.pageCotroller,
         physics: NeverScrollableScrollPhysics(),
-        children: [NoteView(), NoteView(), ProfileView()],
+        children: [NoteView(), NewsScreen(), ProfileView()],
       ),
       bottomNavigationBar: ValueBuilder<int?>(
         initialValue: 0,

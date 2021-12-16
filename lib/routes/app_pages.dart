@@ -1,3 +1,5 @@
+import 'package:aqua_workout_pro/pages/news/screens/news_screen.dart';
+import 'package:aqua_workout_pro/pages/news/screens/view_news_screen.dart';
 import 'package:aqua_workout_pro/pages/notes/screens/add_new_note_view.dart';
 import 'package:aqua_workout_pro/pages/notes/screens/edit_note_view.dart';
 import 'package:aqua_workout_pro/pages/notes/screens/note_detail_view.dart';
@@ -78,6 +80,16 @@ class AppPages {
       name: Routes.EDIT_NOTE,
       title: 'Edit Note',
       page: () => EditNoteView(),
+    ),
+    GetPage(
+      name: Routes.NEWS_SCREEN,
+      title: 'News Screen',
+      page: () => NewsScreen(),
+    ),
+    GetPage(
+      name: Routes.VIEW_NEWS,
+      title: 'View News',
+      page: () => ViewNews(),
     ),
   ];
 }

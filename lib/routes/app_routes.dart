@@ -20,4 +20,9 @@ abstract class Routes {
   static const SETTINGS = '/settings';
   static const PRIVACY_POLICY = '/privacy-policy';
   static const TERMS_CONDITIONS = '/terms-conditions';
+
+  static const NEWS_SCREEN = '/news';
+  static const VIEW_NEWS = '/views-news';
+
+
 }
