@@ -17,16 +17,16 @@ class AvatarWidget extends StatelessWidget {
     this.isHideProgressBar = false,
     this.width = 85,
     this.heroTag,
-    Key key,
+    Key? key,
   }) : super(key: key);
 
-  final String photoURL;
-  final String heroTag;
-  final String membership;
-  final int progress;
-  final Color color;
+  final String? photoURL;
+  final String? heroTag;
+  final String? membership;
+  final int? progress;
+  final Color? color;
   final bool isHideProgressBar;
-  final double width;
+  final double? width;
 
   Widget emptyPhoto() {
     return Hero(
@@ -83,14 +83,14 @@ class AvatarWidget extends StatelessWidget {
                   child: CircleAvatar(
                     maxRadius: 60,
                     backgroundColor: Colors.white,
-                    backgroundImage: NetworkImage(photoURL),
+                    backgroundImage: NetworkImage(photoURL!),
                   ),
                 )
           : Stack(
               children: [
                 CircularStepProgressIndicator(
                   padding: 0,
-                  currentStep: progress,
+                  currentStep: progress!,
                   totalSteps: 100,
                   selectedStepSize: 3.7,
                   width: 70,
@@ -108,7 +108,7 @@ class AvatarWidget extends StatelessWidget {
                             child: CircleAvatar(
                               maxRadius: 27,
                               backgroundColor: Colors.white,
-                              backgroundImage: NetworkImage(photoURL),
+                              backgroundImage: NetworkImage(photoURL!),
                             ),
                           ),
                   ),

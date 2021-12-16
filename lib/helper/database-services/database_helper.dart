@@ -13,12 +13,12 @@ class DatabaseHelper {
   static final _dbVersion = 1;
   static final _tableName = "notes";
 
-  static Database _database;
+  static Database? _database;
 
   Future<Database> get database async {
-    if (_database != null) return _database;
+    if (_database != null) return _database!;
     _database = await _initiateDatabase();
-    return _database;
+    return _database!;
   }
 
   _initiateDatabase() async {

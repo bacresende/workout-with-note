@@ -4,17 +4,17 @@ import '../../core.dart';
 
 class FittedButton extends StatelessWidget {
   const FittedButton({
-    Key key,
+    Key? key,
     @required this.onPressed,
     @required this.label,
     this.color,
     this.padding,
   }) : super(key: key);
 
-  final Function() onPressed;
-  final String label;
-  final Color color;
-  final EdgeInsetsGeometry padding;
+  final Function()? onPressed;
+  final String? label;
+  final Color? color;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class FittedButton extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 8.0),
                 child: Text(
-                  label,
+                  label!,
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,

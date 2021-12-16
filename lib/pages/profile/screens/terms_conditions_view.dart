@@ -3,7 +3,7 @@ import 'package:flutter_html/flutter_html.dart';
 import '../../../core.dart';
 
 class TermsConditionsView extends StatelessWidget {
-  const TermsConditionsView({Key key}) : super(key: key);
+  const TermsConditionsView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

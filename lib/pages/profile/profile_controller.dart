@@ -5,7 +5,7 @@ import '../../core.dart';
 
 class ProfileController extends GetxController {
   static ProfileController to = Get.find();
-  User userProfile;
+  User? userProfile;
 
   final GlobalKey<FormState> keyLoginForm = GlobalKey<FormState>();
   final GlobalKey<FormState> keyRegisterForm = GlobalKey<FormState>();
@@ -35,6 +35,11 @@ class ProfileController extends GetxController {
   var isConfirmPasswordSecure = true;
   bool isUsernameAvailable = true;
 
+
+  String? returnNull(){
+    return null;
+  }
+
   @override
   void onInit() async {
     super.onInit();
@@ -57,15 +62,15 @@ class ProfileController extends GetxController {
     countryCtrl.text = userProfile?.address?.country ?? "Indonesia";
     postalCodeCtrl.text = userProfile?.address?.postalCode ?? "";
 
-    phoneCtrl.text = ConverterHelper.removePhoneCode(userProfile?.phone) ?? "";
-    dobCtrl.text = ConverterHelper.stringFormatDmy(userProfile?.dob) ?? "";
+    phoneCtrl.text = ConverterHelper?.removePhoneCode(userProfile!.phone) ?? '';
+    dobCtrl.text = ConverterHelper.stringFormatDmy(userProfile!.dob) ?? '';
 
     update();
   }
 
   updateProfile() async {
-    if (keyEditProfileForm.currentState.validate()) {
-      keyEditProfileForm.currentState.save();
+    if (keyEditProfileForm.currentState!.validate()) {
+      keyEditProfileForm.currentState!.save();
       isUsernameAvailable = false;
       update();
     }

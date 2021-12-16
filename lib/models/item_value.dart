@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ItemValue {
-  String name;
-  String value;
+  String? name;
+  String? value;
 
   ItemValue({
     @required this.name,

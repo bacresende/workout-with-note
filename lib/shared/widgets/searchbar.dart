@@ -32,7 +32,7 @@ class SearchBar extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    return null;
+    return Container();
   }
 
   @override
@@ -41,8 +41,8 @@ class SearchBar extends SearchDelegate {
         ? controller.notes
         : controller.notes.where(
           (p) {
-        return p.title.toLowerCase().contains(query.toLowerCase()) ||
-            p.content.toLowerCase().contains(query.toLowerCase());
+        return p.title!.toLowerCase().contains(query.toLowerCase()) ||
+            p.content!.toLowerCase().contains(query.toLowerCase());
       },
     ).toList();
     return Container(
@@ -84,7 +84,7 @@ class SearchBar extends SearchDelegate {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    suggestionList[index].title,
+                    suggestionList[index].title!,
                     style: TextStyle(
                       fontSize: 21,
                       fontWeight: FontWeight.bold,
@@ -97,7 +97,7 @@ class SearchBar extends SearchDelegate {
                     height: 10,
                   ),
                   Text(
-                    suggestionList[index].content,
+                    suggestionList[index].content!,
                     style: TextStyle(
                       fontSize: 17,
                     ),
@@ -107,7 +107,7 @@ class SearchBar extends SearchDelegate {
                     height: 10,
                   ),
                   Text(
-                    controller.notes[index].dateTimeEdited,
+                    controller.notes[index].dateTimeEdited!,
                   ),
                 ],
               ),

@@ -20,18 +20,18 @@ class ConfirmDialog extends StatelessWidget {
     this.onLeftPressed,
     this.onRightPressed,
     this.customWidget,
-    Key key,
+    Key? key,
   }) : super(key: key);
 
-  final String title, content, lottieFilename;
-  final String labelLeftButton, labelRightButton;
-  final Color colorLeftButton, colorRightButton;
-  final Color colorLeftTextButton, colorRightTextButton;
-  final double fontSizeLeftButton, fontSizeRightButton;
-  final Function() onLeftPressed;
-  final Function() onRightPressed;
-  final Icon iconLeftButton, iconRightButton;
-  final Widget customWidget;
+  final String? title, content, lottieFilename;
+  final String? labelLeftButton, labelRightButton;
+  final Color? colorLeftButton, colorRightButton;
+  final Color? colorLeftTextButton, colorRightTextButton;
+  final double? fontSizeLeftButton, fontSizeRightButton;
+  final Function()? onLeftPressed;
+  final Function()? onRightPressed;
+  final Icon? iconLeftButton, iconRightButton;
+  final Widget? customWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,7 @@ class ConfirmDialog extends StatelessWidget {
                   : Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
-                        title,
+                        title!,
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
@@ -70,7 +70,7 @@ class ConfirmDialog extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           vertical: 15.0, horizontal: 8),
                       child: Text(
-                        content,
+                        content!,
                         style: TextStyle(
                           fontSize: 17,
                         ),
@@ -100,7 +100,7 @@ class ConfirmDialog extends StatelessWidget {
                               Radius.circular(15),
                             ),
                             border: Border.all(
-                              color: Colors.grey[300],
+                              color: Colors.grey[300]!,
                               width: 1,
                             ),
                           ),

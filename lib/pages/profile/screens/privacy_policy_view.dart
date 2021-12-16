@@ -3,7 +3,7 @@ import 'package:flutter_html/flutter_html.dart';
 import '../../../core.dart';
 
 class PrivacyPolicyView extends StatelessWidget {
-  const PrivacyPolicyView({Key key}) : super(key: key);
+  const PrivacyPolicyView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

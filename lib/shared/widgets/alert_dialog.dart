@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AlertDialogWidget extends StatelessWidget {
-  final String contentText;
-  final Function confirmFunction;
-  final Function declineFunction;
+  final String? contentText;
+  var confirmFunction;
+  var declineFunction;
 
   AlertDialogWidget({
     this.contentText,
@@ -15,15 +16,15 @@ class AlertDialogWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       content: Text(
-        contentText,
+        contentText!,
       ),
       actions: [
         TextButton(
-          onPressed: declineFunction,
+          onPressed: this.declineFunction,
           child: Text("No"),
         ),
         TextButton(
-          onPressed: confirmFunction,
+          onPressed: this.confirmFunction,
           child: Text("Yes"),
         ),
       ],

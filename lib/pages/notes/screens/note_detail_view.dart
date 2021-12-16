@@ -10,7 +10,7 @@ class NoteDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final int i = ModalRoute.of(context).settings.arguments;
+    final int i = ModalRoute.of(context)!.settings.arguments as int;
     return Scaffold(
       appBar: AppBar(
         brightness: Brightness.light,
@@ -54,7 +54,7 @@ class NoteDetailView extends StatelessWidget {
                                   contentText:
                                       "Are you sure you want to delete the note?",
                                   confirmFunction: () {
-                                    controller.deleteNote(controller.notes[i].id);
+                                    controller.deleteNote(controller.notes[i].id!);
                                     Get.offAllNamed(Routes.HOME);
                                   },
                                   declineFunction: () {
@@ -91,8 +91,8 @@ class NoteDetailView extends StatelessWidget {
 
                           onPressed: () {
                             controller.shareNote(
-                              controller.notes[i].title,
-                              controller.notes[i].content,
+                              controller.notes[i].title!,
+                              controller.notes[i].content!,
                             );
                           },
                           child: Row(
@@ -126,7 +126,7 @@ class NoteDetailView extends StatelessWidget {
                           children: [
                             Text(
                               "Created :  " +
-                                  controller.notes[i].dateTimeCreated,
+                                  controller.notes[i].dateTimeCreated!,
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -198,7 +198,7 @@ class NoteDetailView extends StatelessWidget {
                     height: 10,
                   ),
                   SelectableText(
-                    controller.notes[i].title,
+                    controller.notes[i].title!,
                     style: TextStyle(
                       fontSize: 27,
                       fontWeight: FontWeight.w900,
@@ -208,7 +208,7 @@ class NoteDetailView extends StatelessWidget {
                     height: 15,
                   ),
                   Text(
-                    "Last Edited : " + controller.notes[i].dateTimeEdited,
+                    "Last Edited : " + controller.notes[i].dateTimeEdited!,
                     style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.bold,
@@ -219,7 +219,7 @@ class NoteDetailView extends StatelessWidget {
                     height: 15,
                   ),
                   SelectableText(
-                    controller.notes[i].content,
+                    controller.notes[i].content!,
                     style: TextStyle(
                       fontSize: 22,
                     ),

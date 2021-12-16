@@ -1,11 +1,11 @@
 part of 'user.dart';
 
 class UserAddress {
-  String street;
-  String city;
-  String province;
-  String country;
-  String postalCode;
+  String? street;
+  String? city;
+  String? province;
+  String? country;
+  String? postalCode;
 
   UserAddress({
     this.street,
@@ -16,11 +16,11 @@ class UserAddress {
   });
 
   UserAddress copyWith({
-    String street,
-    String city,
-    String province,
-    String country,
-    String postalCode,
+    String? street,
+    String? city,
+    String? province,
+    String? country,
+    String? postalCode,
   }) =>
       UserAddress(
         street: street ?? this.street,

@@ -5,7 +5,7 @@ import '../../../core.dart';
 import 'package:line_icons/line_icons.dart';
 
 class UserAgreementView extends GetView {
-  const UserAgreementView({Key key}) : super(key: key);
+  const UserAgreementView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

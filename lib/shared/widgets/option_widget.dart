@@ -2,12 +2,12 @@ import 'package:aqua_workout_pro/core.dart';
 import 'package:flutter/material.dart';
 
 class OptionWidget extends StatelessWidget {
-  final String state, detail;
-  final bool enable;
-  final Function() onTap;
+  final String? state, detail;
+  final bool? enable;
+  final Function()? onTap;
 
   const OptionWidget({
-    Key key,
+    Key? key,
     this.onTap,
     this.state,
     this.detail,
@@ -40,7 +40,7 @@ class OptionWidget extends StatelessWidget {
                 children: [
                   SizedBox(height: 30),
                   Text(
-                    state,
+                    state!,
                     style: TextStyle(
                         color: kFirstColor,
                         fontWeight: FontWeight.bold,
@@ -48,7 +48,7 @@ class OptionWidget extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    detail,
+                    detail!,
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 13,
@@ -68,7 +68,7 @@ class OptionWidget extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: Color(0xFF373850),
               ),
-              child: enable
+              child: enable!
                   ? Center(
                       child: Icon(
                         Icons.done,

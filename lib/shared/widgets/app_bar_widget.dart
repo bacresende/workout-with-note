@@ -11,14 +11,14 @@ class AppBarWidget extends StatelessWidget {
     this.actions,
     this.borderRadius,
     this.isBorderRadius = true,
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   final bool isBackButton;
-  final String title;
-  final EdgeInsets titlePadding;
-  final List<Widget> actions;
-  final BorderRadiusGeometry borderRadius;
+  final String? title;
+  final EdgeInsets? titlePadding;
+  final List<Widget>? actions;
+  final BorderRadiusGeometry? borderRadius;
   final bool isBorderRadius;
 
   @override
@@ -54,7 +54,7 @@ class AppBarWidget extends StatelessWidget {
                                 Radius.circular(15),
                               ),
                               border: Border.all(
-                                color: Colors.grey[300],
+                                color: Colors.grey[300]!,
                                 width: 1,
                               ),
                             ),
@@ -79,7 +79,7 @@ class AppBarWidget extends StatelessWidget {
                                 bottom: isBackButton ? 0 : 17,
                               ),
                           child: Text(
-                            title,
+                            title!,
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Get.theme.colorScheme.primary,
@@ -95,7 +95,7 @@ class AppBarWidget extends StatelessWidget {
           actions == null
               ? const SizedBox(width: 55)
               : Row(
-                  children: actions,
+                  children: actions!,
                 ),
         ],
       ),

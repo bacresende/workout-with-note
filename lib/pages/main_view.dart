@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../core.dart';
 
 class MainView extends GetView<MainController> {
-  MainView({Key key}) : super(key: key);
+  MainView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class MainView extends GetView<MainController> {
         physics: NeverScrollableScrollPhysics(),
         children: [NoteView(), NoteView(), ProfileView()],
       ),
-      bottomNavigationBar: ValueBuilder<int>(
+      bottomNavigationBar: ValueBuilder<int?>(
         initialValue: 0,
         builder: (value, updateFn) => Container(
           color: Colors.grey[200],
@@ -25,7 +25,7 @@ class MainView extends GetView<MainController> {
             items: controller.navigationItems,
             onTap: (tab) {
               controller.pageCotroller.animateToPage(
-                tab,
+                tab!,
                 duration: controller.animationDuration,
                 curve: Curves.ease,
               );

@@ -7,7 +7,7 @@ import '../../core.dart';
 
 class CountryFormField extends StatefulWidget {
   const CountryFormField({
-    Key key,
+    Key? key,
     @required this.controller,
     @required this.label,
     this.crossAxisAlignment = CrossAxisAlignment.start,
@@ -17,18 +17,18 @@ class CountryFormField extends StatefulWidget {
   }) : super(key: key);
 
   final CrossAxisAlignment crossAxisAlignment;
-  final TextEditingController controller;
-  final String label;
-  final String hintText;
-  final String Function(String) validator;
-  final Country initCountry;
+  final TextEditingController? controller;
+  final String? label;
+  final String? hintText;
+  final String Function(String)? validator;
+  final Country? initCountry;
 
   @override
   State<CountryFormField> createState() => _CountryFormFieldState();
 }
 
 class _CountryFormFieldState extends State<CountryFormField> {
-  Country _selectedDialogCountry;
+  Country? _selectedDialogCountry;
 
   @override
   void initState() {
@@ -54,9 +54,8 @@ class _CountryFormFieldState extends State<CountryFormField> {
                 title: const Text('Select your country'),
                 onValuePicked: (Country country) => setState(() {
                       _selectedDialogCountry = country;
-                      widget.controller.text = _selectedDialogCountry.name;
-                      debugPrint(
-                          "widget.controller.text = ${widget.controller.text}");
+                      widget.controller!.text = _selectedDialogCountry?.name ?? '';
+                      
                     }),
                 // itemFilter: (c) => ['AR', 'DE', 'GB', 'CN'].contains(c.isoCode),
                 priorityList: [
@@ -93,7 +92,7 @@ class _CountryFormFieldState extends State<CountryFormField> {
       crossAxisAlignment: widget.crossAxisAlignment,
       children: [
         Text(
-          widget.label,
+          widget.label!,
           style: TextStyle(color: kFirstColor.withOpacity(0.7), fontSize: 18),
         ),
         SizedBox(
@@ -112,14 +111,14 @@ class _CountryFormFieldState extends State<CountryFormField> {
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         CountryPickerUtils.getDefaultFlagImage(
-                            _selectedDialogCountry),
+                            _selectedDialogCountry!),
                         const SizedBox(width: 8.0),
                         Expanded(
                             child: FittedBox(
                           alignment: Alignment.topLeft,
                           fit: BoxFit.scaleDown,
                           child: Text(
-                            _selectedDialogCountry.name,
+                            _selectedDialogCountry?.name ?? '',
                             style: const TextStyle(
                                 fontSize: 16.7, color: Colors.white70),
                           ),

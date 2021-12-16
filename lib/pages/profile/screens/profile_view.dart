@@ -6,7 +6,7 @@ import 'package:share/share.dart';
 import '../../../core.dart';
 
 class ProfileView extends GetView<ProfileController> {
-  const ProfileView({Key key}) : super(key: key);
+  const ProfileView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,9 +58,9 @@ class ProfileView extends GetView<ProfileController> {
         child: Row(
           children: [
             AvatarWidget(
-              photoURL: controller.userProfile.photoURL,
-              membership: controller.userProfile.membership,
-              progress: controller.userProfile.progress,
+              photoURL: controller.userProfile!.photoURL,
+              membership: controller.userProfile!.membership,
+              progress: controller.userProfile!.progress,
               heroTag: "profile",
             ),
             Expanded(
@@ -72,7 +72,7 @@ class ProfileView extends GetView<ProfileController> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 1.7),
                       child: Text(
-                        controller.userProfile.fullName,
+                        controller.userProfile!.fullName,
                         style: TextStyle(
                           fontSize: 19,
                           color: Colors.white,
@@ -105,7 +105,7 @@ class ProfileView extends GetView<ProfileController> {
                                 ),
                               ),
                               Text(
-                                controller.userProfile.balance,
+                                controller.userProfile!.balance!,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
@@ -132,7 +132,7 @@ class ProfileView extends GetView<ProfileController> {
                     Radius.circular(15),
                   ),
                   border: Border.all(
-                    color: Colors.grey[300],
+                    color: Colors.grey[300]!,
                     width: 1,
                   ),
                 ),
@@ -162,20 +162,20 @@ class ProfileView extends GetView<ProfileController> {
               ItemListMenu(
                 icon: LineIcons.envelope,
                 name: "Email",
-                data: controller.userProfile.email,
+                data: controller.userProfile!.email,
               ),
               Divider(),
               ItemListMenu(
                 icon: LineIcons.phone,
                 name: "Phone",
-                data: controller.userProfile.phone,
+                data: controller.userProfile!.phone,
               ),
               Divider(),
               ItemListMenu(
                 icon: LineIcons.calendar,
                 name: "Birth of Date",
                 data: ConverterHelper.stringFormatDmyHeader(
-                    controller.userProfile.dob),
+                    controller.userProfile!.dob),
               ),
             ],
           ),

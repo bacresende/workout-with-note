@@ -31,7 +31,7 @@ class NoteController extends GetxController {
   void addNoteToDatabase() async {
     String title = titleController.text;
     String content = contentController.text;
-    if (title.isBlank) {
+    if (title.isBlank!) {
       title = "بدون عنوان";
     }
     Note note = Note(

@@ -14,7 +14,14 @@ class NavigationService {
           ),
           activeIcon: Icon(LineIcons.home),
           title: "Notes"),
-      BottomBarItem(isCustomWidget: true),
+      BottomBarItem(
+          backgroundColor: kFirstColor,
+          icon: Icon(
+            LineIcons.newspaper,
+            color: Colors.black54,
+          ),
+          activeIcon: Icon(LineIcons.user),
+          title: "News"),
       BottomBarItem(
           backgroundColor: kFirstColor,
           icon: Icon(

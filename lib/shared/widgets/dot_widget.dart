@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class DotWidget extends StatelessWidget {
   const DotWidget({
     this.color,
-    Key key,
+    Key? key,
   }) : super(key: key);
 
-  final Color color;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {

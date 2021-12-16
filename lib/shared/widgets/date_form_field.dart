@@ -8,21 +8,21 @@ class DateFormField extends StatelessWidget {
     @required this.controller,
     @required this.labelText,
     this.crossAxisAlignment = CrossAxisAlignment.start,
-    this.validator,
+    @required this.validator,
     this.hintText,
     this.firstDate,
     this.initialDate,
     this.lastDate,
     this.initialDatePickerMode,
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   final CrossAxisAlignment crossAxisAlignment;
-  final TextEditingController controller;
-  final String labelText, hintText;
-  final DateTime firstDate, initialDate, lastDate;
-  final DatePickerMode initialDatePickerMode;
-  final String Function(String) validator;
+  final TextEditingController? controller;
+  final String? labelText, hintText;
+  final DateTime? firstDate, initialDate, lastDate;
+  final DatePickerMode? initialDatePickerMode;
+  final String Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class DateFormField extends StatelessWidget {
       crossAxisAlignment: crossAxisAlignment,
       children: [
         Text(
-          labelText,
+          labelText!,
           style: TextStyle(color: kFirstColor.withOpacity(0.7), fontSize: 18),
         ),
         const SizedBox(height: 4),
@@ -46,11 +46,11 @@ class DateFormField extends StatelessWidget {
                     initialDatePickerMode ?? DatePickerMode.year,
                 currentDate: DateTime.now(),
                 builder: (_, child) {
-                  return Theme(data: ThemeData.dark().copyWith(), child: child);
+                  return Theme(data: ThemeData.dark().copyWith(), child: child!);
                 }).then((date) {
               if (date != null) {
                 final dateFormatOnShow = DateFormat("dd-MM-yyyy");
-                controller.text = dateFormatOnShow.format(date);
+                controller!.text = dateFormatOnShow.format(date);
                 // final dateFormatOnInsert = DateFormat("yyyy-MM-dd");
                 // onDateSelected(dateFormatOnInsert.format(date));
                 // debugPrint(df.format(date));

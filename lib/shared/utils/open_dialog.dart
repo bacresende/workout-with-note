@@ -8,8 +8,8 @@ import '../../core.dart';
 class OpenDialog {
   static const DialogTransitionType animationType = DialogTransitionType.size;
 
-  static Future<void> messageSuccess(String message,
-      {String title, Duration duration}) async {
+  static Future<void>? messageSuccess(String message,
+      {String? title, Duration? duration}) async {
     Get.snackbar(
       title ?? "Success Message",
       message,
@@ -24,7 +24,7 @@ class OpenDialog {
     );
   }
 
-  static Future<void> messageError(String message, {Duration duration}) async {
+  static Future<void> messageError(String message, {Duration? duration}) async {
     print("[ERROR] : ${message.toString()}");
     Get.snackbar(
       "Error Message",
@@ -40,18 +40,18 @@ class OpenDialog {
     );
   }
 
-  static Future<T> info<T>({
-    String title,
-    String content,
-    String lottieFilename,
-    EdgeInsets lottiePadding,
-    String labelButton,
-    Function() onClicked,
-    Widget customWidget,
+  static Future? info({
+    String? title,
+    String? content,
+    String? lottieFilename,
+    EdgeInsets? lottiePadding,
+    String? labelButton,
+    Function()? onClicked,
+    Widget? customWidget,
     bool isBackAfterYes = true,
   }) async {
     return await showAnimatedDialog(
-      context: Get.context,
+      context: Get.context!,
       barrierDismissible: true,
       animationType: animationType,
       curve: Curves.fastOutSlowIn,
@@ -71,19 +71,19 @@ class OpenDialog {
     );
   }
 
-  static Future<T> confirm<T>({
-    String title,
-    String content,
-    String lottieFilename,
-    String labelNoButton,
-    Function() onNoClicked,
-    String labelYesButton,
-    @required Function() onYesClicked,
-    Widget customWidget,
+  static Future? confirm({
+    String? title,
+    String? content,
+    String? lottieFilename,
+    String? labelNoButton,
+    Function()? onNoClicked,
+    String? labelYesButton,
+    @required Function()? onYesClicked,
+    Widget? customWidget,
     bool isBackAfterYes = true,
   }) async {
     return await showAnimatedDialog(
-      context: Get.context,
+      context: Get.context!,
       barrierDismissible: true,
       animationType: animationType,
       curve: Curves.fastOutSlowIn,

@@ -4,7 +4,7 @@ import '../../core.dart';
 
 class LayoutScreen extends StatelessWidget {
   const LayoutScreen({
-    Key key,
+    Key? key,
     this.backgroundColor,
     this.heightHeader = 70,
     this.appBar,
@@ -12,11 +12,11 @@ class LayoutScreen extends StatelessWidget {
     this.footer,
   }) : super(key: key);
 
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final double heightHeader;
-  final AppBarWidget appBar;
-  final Widget body;
-  final Widget footer;
+  final AppBarWidget? appBar;
+  final Widget? body;
+  final Widget? footer;
 
   @override
   Widget build(BuildContext context) {

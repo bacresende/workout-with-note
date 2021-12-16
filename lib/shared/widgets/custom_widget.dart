@@ -4,10 +4,10 @@ import 'dot_widget.dart';
 class CustomIcon extends StatelessWidget {
   const CustomIcon({
     this.color,
-    Key key,
+    Key? key,
   }) : super(key: key);
 
-  final Color color;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -16,17 +16,17 @@ class CustomIcon extends StatelessWidget {
       children: [
         Row(
           children: [
-            DotWidget(color: color),
+            DotWidget(color: color!),
             SizedBox(width: 5),
-            DotWidget(color: color),
+            DotWidget(color: color!),
           ],
         ),
         SizedBox(height: 5),
         Row(
           children: [
-            DotWidget(color: color),
+            DotWidget(color: color!),
             SizedBox(width: 5),
-            DotWidget(color: color),
+            DotWidget(color: color!),
           ],
         ),
       ],

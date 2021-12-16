@@ -7,12 +7,12 @@ class MenuBottomNavBarWidget extends StatelessWidget {
     this.currentIndex = 0,
     @required this.items,
     this.onTap,
-    Key key,
+    Key? key,
   }) : super(key: key);
 
-  final int currentIndex;
-  final Function(int) onTap;
-  final List<BottomBarItem> items;
+  final int? currentIndex;
+  final Function(int?)? onTap;
+  final List<BottomBarItem?>? items;
 
   @override
   Widget build(BuildContext context) {
@@ -24,22 +24,22 @@ class MenuBottomNavBarWidget extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: items.map((item) {
-            if (item.isCustomWidget ?? false)
+          children: items!.map((item) {
+            if (item?.isCustomWidget ?? false)
               return GestureDetector(
-                onTap: () => onTap(items.indexOf(item)),
+                onTap: () => onTap!(items!.indexOf(item)),
                 child: CustomIcon(
-                    color: currentIndex == items.indexOf(item)
+                    color: currentIndex == items!.indexOf(item)
                         ? kFirstColor
                         : Color(0xFF707070)),
               );
             else
               return InkWell(
-                onTap: () => onTap(items.indexOf(item)),
+                onTap: () => onTap!(items!.indexOf(item)),
                 child: Text(
-                  item.title,
+                  item!.title!,
                   style: TextStyle(
-                    color: currentIndex == items.indexOf(item)
+                    color: currentIndex == items!.indexOf(item)
                         ? kFirstColor
                         : Color(0xFF707070),
                     fontSize: 18,

@@ -11,13 +11,13 @@ class DropdownFormField extends StatelessWidget {
     this.validator,
     this.value,
     this.hintText,
-    Key key,
+    Key? key,
   }) : super(key: key);
-  final TextEditingController controller;
-  final ItemValue value;
-  final String labelText, hintText;
-  final List<ItemValue> items;
-  final String Function(String) validator;
+  final TextEditingController? controller;
+  final ItemValue? value;
+  final String? labelText, hintText;
+  final List<ItemValue?>? items;
+  final String? Function(String?)? validator;
   final CrossAxisAlignment crossAxisAlignment;
 
   @override
@@ -28,7 +28,7 @@ class DropdownFormField extends StatelessWidget {
         crossAxisAlignment: crossAxisAlignment,
         children: [
           Text(
-            labelText,
+            labelText!,
             style: TextStyle(color: kFirstColor.withOpacity(0.7), fontSize: 18),
           ),
           const SizedBox(height: 4),
@@ -38,11 +38,11 @@ class DropdownFormField extends StatelessWidget {
               value: value?.value,
               validator: validator,
               onChanged: (value) {
-                controller.text = value;
+                controller!.text = value!;
               },
-              items: items
+              items: items!
                   .map((item) => DropdownMenuItem<String>(
-                      value: item.value, child: Text(item.name)))
+                      value: item!.value, child: Text(item.name!)))
                   .toList(),
               style: TextStyle(color: Colors.white70),
               decoration: InputDecoration(

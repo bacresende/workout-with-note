@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:queen_validators/queen_validators.dart';
 
 class EditProfileView extends GetView<ProfileController> {
-  const EditProfileView({Key key}) : super(key: key);
+  const EditProfileView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +62,7 @@ class EditProfileView extends GetView<ProfileController> {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 17.0),
             child: AvatarWidget(
-              photoURL: controller.userProfile.photoURL,
+              photoURL: controller.userProfile!.photoURL,
               isHideProgressBar: true,
               width: 120,
               heroTag: "profile",
@@ -140,10 +140,9 @@ class EditProfileView extends GetView<ProfileController> {
               hintText: "Enter your phone number",
               keyboardType: TextInputType.phone,
               initPhoneCode: CountryPickerUtils.getCountryByPhoneCode(
-                  ConverterHelper.getPhoneCode(controller.userProfile.phone) ??
-                      '62'),
+                  ConverterHelper?.getPhoneCode(controller.userProfile!.phone) ?? '62'),
               validator: (value) {
-                if (value.isEmpty) {
+                if (value!.isEmpty) {
                   return "Phone number is required.";
                 }
                 return null;
@@ -154,7 +153,7 @@ class EditProfileView extends GetView<ProfileController> {
               children: [
                 Expanded(
                   child: DateFormField(
-                    initialDate: controller.userProfile.dob,
+                    initialDate: controller.userProfile!.dob,
                     controller: controller.dobCtrl,
                     labelText: "Date of Birth",
                     hintText: "Enter your date of birth",
@@ -163,17 +162,17 @@ class EditProfileView extends GetView<ProfileController> {
                 const SizedBox(width: 17),
                 Expanded(
                   child: DropdownFormField(
-                    value: controller.userProfile.gender == null
+                    value: controller.userProfile!.gender == null
                         ? null
                         : Globals.getGenderItems().firstWhere((item) =>
                             item.value ==
-                            controller.userProfile.gender?.toLowerCase()),
+                            controller.userProfile?.gender!.toLowerCase()),
                     controller: controller.genderCtrl,
                     labelText: "Gender",
                     hintText: "Enter your gender",
                     items: Globals.getGenderItems(),
                     validator: (value) {
-                      if (value?.isEmpty ?? true) {
+                      if (value!.isEmpty) {
                         return "Gender is required.";
                       }
                       return null;

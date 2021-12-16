@@ -8,9 +8,9 @@ class EditNoteView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final int i = ModalRoute.of(context).settings.arguments;
-    controller.titleController.text = controller.notes[i].title;
-    controller.contentController.text = controller.notes[i].content;
+    final int i = ModalRoute.of(context)!.settings.arguments as int;
+    controller.titleController.text = controller.notes[i].title!;
+    controller.contentController.text = controller.notes[i].content!;
     return Scaffold(
       appBar: AppBar(
         brightness: Brightness.light,
@@ -73,7 +73,7 @@ class EditNoteView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           controller.updateNote(
-              controller.notes[i].id, controller.notes[i].dateTimeCreated);
+              controller.notes[i].id!, controller.notes[i].dateTimeCreated!);
         },
         child: Icon(Icons.save),
       ),

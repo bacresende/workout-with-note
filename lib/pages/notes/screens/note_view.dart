@@ -60,7 +60,7 @@ class NoteView extends StatelessWidget {
                     return AlertDialogWidget(
                       contentText: "Are you sure you want to delete the note?",
                       confirmFunction: () {
-                        controller.deleteNote(controller.notes[index].id);
+                        controller.deleteNote(controller.notes[index].id!);
                         Get.back();
                       },
                       declineFunction: () {
@@ -82,7 +82,7 @@ class NoteView extends StatelessWidget {
                   children: [
                     Text(
                       //todo add note(title) from index
-                      controller.notes[index].title,
+                      controller.notes[index].title!,
                       style: TextStyle(
                         fontSize: 21,
                         fontWeight: FontWeight.bold,
@@ -96,7 +96,7 @@ class NoteView extends StatelessWidget {
                     ),
                     Text(
                       //todo add note(content) from index
-                      controller.notes[index].content,
+                      controller.notes[index].content!,
                       style: TextStyle(
                         fontSize: 17,
                       ),
@@ -107,7 +107,7 @@ class NoteView extends StatelessWidget {
                     ),
                     Text(
                       //todo add note(date time) from index
-                      controller.notes[index].dateTimeEdited,
+                      controller.notes[index].dateTimeEdited!,
                     ),
                   ],
                 ),
@@ -159,7 +159,7 @@ class NoteView extends StatelessWidget {
                             return AlertDialogWidget(
                               contentText:
                                   "Are you sure you want to delete all notes?",
-                              confirmFunction: () {
+                              confirmFunction: (){
                                 controller.deleteAllNotes();
                                 Get.back();
                               },

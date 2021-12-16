@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 class ItemListMenu extends StatelessWidget {
   const ItemListMenu({
-    Key key,
+    Key? key,
     this.icon,
     this.name,
     this.data,
     this.onPressed,
   }) : super(key: key);
 
-  final IconData icon;
-  final String name;
-  final String data;
-  final Function() onPressed;
+  final IconData? icon;
+  final String? name;
+  final String? data;
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class ItemListMenu extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  name,
+                  name!,
                   style: TextStyle(
                     fontSize: onPressed != null ? 20 : 18,
                     fontWeight: FontWeight.w500,

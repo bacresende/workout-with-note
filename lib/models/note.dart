@@ -1,9 +1,9 @@
 class Note {
-  int id;
-  String title;
-  String content;
-  String dateTimeEdited;
-  String dateTimeCreated;
+  int? id;
+  String? title;
+  String? content;
+  String? dateTimeEdited;
+  String? dateTimeCreated;
 
   Note({
     this.id, this.title, this.content, this.dateTimeEdited,

@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 
 class TextFormFieldX extends StatefulWidget {
   const TextFormFieldX({
-    Key key,
+    Key? key,
     @required this.controller,
     @required this.label,
     this.crossAxisAlignment = CrossAxisAlignment.start,
@@ -25,27 +25,27 @@ class TextFormFieldX extends StatefulWidget {
   }) : super(key: key);
 
   final CrossAxisAlignment crossAxisAlignment;
-  final TextEditingController controller;
-  final String label;
-  final String hintText;
-  final String errorText;
-  final String Function(String) validator;
-  final TextInputType keyboardType;
-  final List<TextInputFormatter> inputFormatters;
-  final Country initPhoneCode;
+  final TextEditingController? controller;
+  final String? label;
+  final String? hintText;
+  final String? errorText;
+  final String? Function(String?)? validator;
+  final TextInputType? keyboardType;
+  final List<TextInputFormatter>? inputFormatters;
+  final Country? initPhoneCode;
   final TextCapitalization textCapitalization;
   final bool autocorrect;
-  final String initialValue;
-  final Brightness keyboardAppearance;
-  final int maxLength;
-  final int maxLines;
+  final String? initialValue;
+  final Brightness? keyboardAppearance;
+  final int? maxLength;
+  final int? maxLines;
 
   @override
   State<TextFormFieldX> createState() => _TextFormFieldXState();
 }
 
 class _TextFormFieldXState extends State<TextFormFieldX> {
-  Country _selectedDialogCountry;
+  Country? _selectedDialogCountry;
 
   @override
   void initState() {
@@ -105,7 +105,7 @@ class _TextFormFieldXState extends State<TextFormFieldX> {
       crossAxisAlignment: widget.crossAxisAlignment,
       children: [
         Text(
-          widget.label,
+          widget.label!,
           style: TextStyle(color: kFirstColor.withOpacity(0.7), fontSize: 18),
         ),
         SizedBox(
@@ -124,11 +124,11 @@ class _TextFormFieldXState extends State<TextFormFieldX> {
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
                             CountryPickerUtils.getDefaultFlagImage(
-                                _selectedDialogCountry),
+                                _selectedDialogCountry!),
                             const SizedBox(width: 8.0),
                             Flexible(
                                 child: Text(
-                              "+${_selectedDialogCountry.phoneCode} (${_selectedDialogCountry.isoCode}) ",
+                              "+${_selectedDialogCountry!.phoneCode} (${_selectedDialogCountry!.isoCode}) ",
                               style: const TextStyle(
                                   fontSize: 15.7, color: Colors.white70),
                             )),
@@ -157,8 +157,8 @@ class _TextFormFieldXState extends State<TextFormFieldX> {
                   maxLines: widget.maxLines,
                   onSaved: (value) {
                     if (widget.keyboardType == TextInputType.phone) {
-                      widget.controller.text =
-                          "(${_selectedDialogCountry.phoneCode}) " + value;
+                      widget.controller!.text =
+                          "(${_selectedDialogCountry!.phoneCode}) " + value!;
                     }
                   },
                   style: TextStyle(color: Colors.white70),

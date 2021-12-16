@@ -8,7 +8,7 @@ class MainController extends GetxController {
 
   final pageCotroller = PageController();
   final animationDuration = const Duration(milliseconds: 350);
-  List<BottomBarItem> navigationItems;
+  List<BottomBarItem> navigationItems = [];
 
   @override
   void onInit() {

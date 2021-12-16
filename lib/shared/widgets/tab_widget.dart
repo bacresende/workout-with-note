@@ -6,11 +6,11 @@ class TabWidget extends StatelessWidget {
   const TabWidget({
     this.onSelected,
     this.items,
-    Key key,
+    Key? key,
   }) : super(key: key);
 
-  final Function(int) onSelected;
-  final List<String> items;
+  final Function(int?)? onSelected;
+  final List<String?>? items;
 
   @override
   Widget build(BuildContext context) {
@@ -20,23 +20,23 @@ class TabWidget extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: items
+            children: items!
                 .map((item) => buildItem(
                     onTap: () {
-                      updateFn(items.indexOf(item));
-                      onSelected(items.indexOf(item));
+                      updateFn(items!.indexOf(item));
+                      onSelected!(items!.indexOf(item));
                     },
-                    text: item,
-                    isActive: items.indexOf(item) == value))
+                    text: item!,
+                    isActive: items!.indexOf(item) == value))
                 .toList()),
       ),
     );
   }
 
   Widget buildItem({
-    @required String text,
+    @required String? text,
     bool isActive = false,
-    void Function() onTap,
+    void Function()? onTap,
   }) {
     return GestureDetector(
       onTap: onTap,
@@ -48,7 +48,7 @@ class TabWidget extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            text,
+            text!,
             style: TextStyle(color: Colors.white, fontSize: 14),
           ),
         ),

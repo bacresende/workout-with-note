@@ -1,18 +1,18 @@
 part 'user_address.dart';
 
 class User {
-  String firstname;
-  String lastname;
-  String gender;
-  String email;
-  String phone;
-  String photoURL;
-  DateTime dob;
-  String company;
-  UserAddress address;
-  String balance;
-  String membership;
-  int progress;
+  String? firstname;
+  String? lastname;
+  String? gender;
+  String? email;
+  String? phone;
+  String? photoURL;
+  DateTime? dob;
+  String? company;
+  UserAddress? address;
+  String? balance;
+  String? membership;
+  int? progress;
 
   String get fullName {
     return "${firstname ?? ""} ${lastname ?? ""}".trim();
@@ -34,18 +34,18 @@ class User {
   });
 
   User copyWith({
-    String firstname,
-    String lastname,
-    String gender,
-    String email,
-    String phone,
-    String photoURL,
-    DateTime dob,
-    String company,
-    UserAddress address,
-    String balance,
-    String membership,
-    int progress,
+    String? firstname,
+    String? lastname,
+    String? gender,
+    String? email,
+    String? phone,
+    String? photoURL,
+    DateTime? dob,
+    String? company,
+    UserAddress? address,
+    String? balance,
+    String? membership,
+    int? progress,
   }) =>
       User(
         firstname: firstname ?? this.firstname,

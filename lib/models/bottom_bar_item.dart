@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class BottomBarItem {
-  Color backgroundColor;
-  Icon icon;
-  Icon activeIcon;
-  String title;
-  bool isCustomWidget;
+  Color? backgroundColor;
+  Icon? icon;
+  Icon? activeIcon;
+  String? title;
+  bool? isCustomWidget;
 
   BottomBarItem({
     this.backgroundColor,
