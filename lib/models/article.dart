@@ -8,7 +8,7 @@ class Article {
   Source? source;
 
   Article.fromJson(Map<String, dynamic> json){
-    Source.fromJson(json['source'] as Map<String, dynamic>);
+      this.source = Source.fromJson(json['source'] as Map<String, dynamic>);
       this.author = json['author'] as String?;
       this.title = json['title'] as String?;
       this.description = json['description'] as String?;
