@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Aqua Workout',
-      themeMode: ThemeMode.dark,
       theme: ThemeData.dark().copyWith(
         // primarySwatch: Colors.blue,
         primaryColor: Colors.blue,

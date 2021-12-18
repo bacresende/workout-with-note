@@ -14,7 +14,7 @@ class NewsController extends GetxController {
   RxString category = ''.obs;
   RxString findNews = ''.obs;
   RxInt pageNum = 1.obs;
-  dynamic isSwitched = false.obs;
+  dynamic isSwitched = true.obs;
   dynamic isPageLoading = false.obs;
   RxInt pageSize = 10.obs;
   String baseApi = "https://newsapi.org/v2/top-headlines?";
